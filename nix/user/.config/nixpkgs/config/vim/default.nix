@@ -16,7 +16,7 @@ in
   configure = with pkgs.vimPlugins; {
     customRC = pkgs.lib.readFile ./vimrc;
     plug.plugins = [
-      ale
+      (ale.overrideAttrs(oldAttrs: { patches = ./cabal-ghc.patch; }))
       ack-vim
       airline
       calendar

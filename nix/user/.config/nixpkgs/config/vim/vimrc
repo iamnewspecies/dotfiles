@@ -485,6 +485,11 @@ let g:ale_haskell_hdevtools_options = '-g-isrc -g-Wall --nostack'
 let g:hdevtools_stack = 0
 
 let g:ale_completion_enabled = 1
+let g:ale_linters = { 'haskell': [ 'cabal_ghc', 'ghc' ] }
+let g:ale_linters_explicit = 1
+let g:ale_list_vertical = 1
+let g:ale_haskell_cabal_ghc_options = '-v0 -fno-code -isrc'
+let g:ale_haskell_ghc_options = '-v0 -fno-code -isrc'
 
 autocmd FileType haskell nnoremap <silent> <leader>i :HoogleInfo<CR>
 autocmd FileType haskell nnoremap <silent> <leader>I :HoogleClose<CR>
